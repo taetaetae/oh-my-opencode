@@ -10,7 +10,7 @@ shared/
 ├── logger.ts              # File-based logging (/tmp/oh-my-opencode.log)
 ├── dynamic-truncator.ts   # Token-aware context window management (194 lines)
 ├── model-resolver.ts      # 3-step resolution (Override → Fallback → Default)
-├── model-requirements.ts  # Agent/category model fallback chains (132 lines)
+├── model-requirements.ts  # Agent/category model fallback chains (162 lines)
 ├── model-availability.ts  # Provider model fetching & fuzzy matching (154 lines)
 ├── jsonc-parser.ts        # JSONC parsing with comment support
 ├── frontmatter.ts         # YAML frontmatter extraction (JSON_SCHEMA only)

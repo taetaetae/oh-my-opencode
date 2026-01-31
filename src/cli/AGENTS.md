@@ -9,8 +9,8 @@ CLI entry: `bunx oh-my-opencode`. Interactive installer, doctor diagnostics. Com
 ```
 cli/
 ├── index.ts              # Commander.js entry (4 commands)
-├── install.ts            # Interactive TUI (520 lines)
-├── config-manager.ts     # JSONC parsing (664 lines)
+├── install.ts            # Interactive TUI (542 lines)
+├── config-manager.ts     # JSONC parsing (667 lines)
 ├── types.ts              # InstallArgs, InstallConfig
 ├── model-fallback.ts     # Model fallback configuration
 ├── doctor/
@@ -19,7 +19,7 @@ cli/
 │   ├── formatter.ts      # Colored output
 │   ├── constants.ts      # Check IDs, symbols
 │   ├── types.ts          # CheckResult, CheckDefinition (114 lines)
-│   └── checks/           # 14 checks, 21 files
+│   └── checks/           # 14 checks, 23 files
 │       ├── version.ts    # OpenCode + plugin version
 │       ├── config.ts     # JSONC validity, Zod
 │       ├── auth.ts       # Anthropic, OpenAI, Google
@@ -30,6 +30,8 @@ cli/
 │       └── gh.ts         # GitHub CLI
 ├── run/
 │   └── index.ts          # Session launcher
+├── mcp-oauth/
+│   └── index.ts          # MCP OAuth flow
 └── get-local-version/
     └── index.ts          # Version detection
 ```
