@@ -120,11 +120,11 @@ export function resolveCategoryConfig(
   }
 ): { config: CategoryConfig; promptAppend: string; model: string | undefined } | null {
   const { userCategories, inheritedModel, systemDefaultModel, availableModels } = options
+  const hasExplicitConfig = userCategories?.[categoryName] !== undefined
 
-  // Check if category requires a specific model
   const categoryReq = CATEGORY_MODEL_REQUIREMENTS[categoryName]
-  if (categoryReq?.requiresModel && availableModels) {
-    if (!isModelAvailable(categoryReq.requiresModel, availableModels)) {
+  if (categoryReq?.requiresModel && !hasExplicitConfig) {
+    if (!availableModels || availableModels.size === 0 || !isModelAvailable(categoryReq.requiresModel, availableModels)) {
       log(`[resolveCategoryConfig] Category ${categoryName} requires ${categoryReq.requiresModel} but not available`)
       return null
     }
